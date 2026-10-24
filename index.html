@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#21140f">
+  <meta name="description" content="Konsep demo landing page untuk usaha seblak di Tasikmalaya. Informasi menu dan pemesanan menunggu konfirmasi pemilik.">
+  <title>Konsep Seblak Gacor — Demo Landing Page</title>
+  <style>
+    :root{--bg:#17100d;--panel:#241812;--cream:#fff4e7;--muted:#c8b8ab;--orange:#ff9b45;--red:#f15c35;--line:#4a3024;--green:#c7e9c0}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--cream);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+    a{color:inherit}
+    .demo-bar{background:#fff1cc;color:#392313;text-align:center;padding:10px 16px;font-size:.78rem;font-weight:750;letter-spacing:.01em}
+    .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{padding:24px 0}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:-.04em}
+    .brand-mark{display:grid;place-items:center;width:43px;height:43px;border-radius:14px;background:linear-gradient(145deg,var(--orange),var(--red));font-size:1.55rem}
+    .brand small{display:block;color:var(--muted);font-size:.69rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+    .nav-link{font-size:.9rem;text-decoration:none;color:var(--muted)}
+    .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid #795034;background:#352117;color:#ffd7a4;border-radius:999px;padding:8px 12px;font-size:.78rem;font-weight:750}
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding:44px 0 76px}
+    .eyebrow{color:var(--orange);font-size:.8rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
+    h1{font-size:clamp(2.7rem,6vw,5.2rem);line-height:.99;letter-spacing:-.065em;margin:18px 0 20px;max-width:680px}
+    h1 span{color:var(--orange)}
+    .lead{font-size:1.08rem;color:var(--muted);max-width:540px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 18px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;text-decoration:none;border-radius:14px;padding:13px 18px;font-weight:850;font-size:.92rem;transition:transform .15s ease}
+    .btn:hover{transform:translateY(-2px)}
+    .primary{background:linear-gradient(120deg,var(--orange),#ffc56d);color:#29170d}
+    .secondary{border:1px solid var(--line);background:#211510;color:var(--cream)}
+    .fine{font-size:.78rem;color:#aa9788}
+    .food-card{position:relative;min-height:430px;border-radius:32px;overflow:hidden;border:1px solid #5a3523;background:radial-gradient(circle at 55% 40%,#83351e 0,#4d2418 30%,#261710 65%,#1a110d 100%);display:grid;place-items:center}
+    .food-card:before,.food-card:after{content:"";position:absolute;border-radius:50%;border:1px solid #ffb66d30}
+    .food-card:before{width:340px;height:340px}.food-card:after{width:410px;height:410px}
+    .steam{position:absolute;top:50px;color:#ffe3bd80;font-size:2.5rem;letter-spacing:12px;transform:rotate(-10deg)}
+    .bowl{position:relative;z-index:1;font-size:clamp(8rem,18vw,13rem);filter:drop-shadow(0 24px 22px #10080590);transform:rotate(-7deg)}
+    .food-label{position:absolute;z-index:2;bottom:24px;left:24px;right:24px;padding:17px 18px;border-radius:18px;background:#1d120de8;border:1px solid #80502e}
+    .food-label strong{display:block;font-size:1.02rem}.food-label span{color:var(--muted);font-size:.82rem}
+    .section{padding:66px 0;border-top:1px solid #3b281e}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}
+    h2{font-size:clamp(1.8rem,4vw,3rem);line-height:1.08;letter-spacing:-.05em;margin:10px 0}
+    .section-head p{max-width:460px;color:var(--muted);margin:0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:linear-gradient(145deg,#2c1c14,#21140f);border:1px solid var(--line);border-radius:22px;padding:22px}
+    .card .emoji{font-size:2.2rem}.card h3{margin:14px 0 7px;font-size:1.08rem}.card p{margin:0;color:var(--muted);font-size:.92rem}
+    .note{margin-top:18px;padding:14px 16px;border:1px dashed #9a6a40;border-radius:14px;color:#e7c9a9;font-size:.82rem}
+    .feature{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .feature-box{border-radius:24px;padding:26px;background:#241812;border:1px solid var(--line)}
+    .feature-box h3{margin:0 0 9px}.feature-box p{color:var(--muted);margin:0}
+    .location{display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px;background:linear-gradient(115deg,#3a2015,#24140f);border:1px solid #704327;border-radius:26px;padding:28px}
+    .location p{color:var(--muted);margin:8px 0 0}
+    footer{padding:28px 0 42px;color:#a99485;font-size:.78rem}
+    .footrow{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid #3b281e;padding-top:20px}
+    @media(max-width:760px){.wrap{width:min(100% - 28px,600px)}.hero{grid-template-columns:1fr;gap:28px;padding:28px 0 52px}.food-card{min-height:320px}.section{padding:48px 0}.section-head{display:block}.section-head p{margin-top:12px}.cards{grid-template-columns:1fr}.feature{grid-template-columns:1fr}.location{grid-template-columns:1fr}.location .btn{width:100%}.nav-link{display:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="demo-bar">KONSEP DEMO / BELUM DISETUJUI PEMILIK — bukan situs resmi Seblak Gacor</div>
+  <header class="wrap">
+    <nav class="nav" aria-label="Navigasi utama">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">🌶️</span><div>SEBLAK GACOR<small>Konsep halaman promosi</small></div></div>
+      <a class="nav-link" href="#konsep">Lihat konsep</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero wrap">
+      <div>
+        <span class="pill">🔥 Konsep promosi kuliner Tasikmalaya</span>
+        <p class="eyebrow" style="margin-top:25px">PEDAS • GURIH • SESUAI SELERAMU</p>
+        <h1>Racik topping favoritmu. <span>Nikmati serunya.</span></h1>
+        <p class="lead">Konsep landing page untuk membantu pelanggan menemukan informasi menu, lokasi, dan cara pesan dalam satu halaman yang nyaman dibuka lewat HP.</p>
+        <div class="actions">
+          <a class="btn primary" href="#konsep">Jelajahi konsep <span aria-hidden="true">↓</span></a>
+          <a class="btn secondary" href="https://maps.app.goo.gl/2zNyN1bogShCjQvL9" target="_blank" rel="noopener noreferrer">Lihat pin Maps ↗</a>
+        </div>
+        <p class="fine">Informasi menu, jam buka, harga, dan pemesanan harus dikonfirmasi sebelum halaman dipublikasikan.</p>
+      </div>
+      <div class="food-card" aria-label="Ilustrasi mangkuk seblak">
+        <div class="steam" aria-hidden="true">〰 〰 〰</div>
+        <div class="bowl" aria-hidden="true">🍜</div>
+        <div class="food-label"><strong>Mulai dari topping favoritmu</strong><span>Visual ilustratif untuk demo — bukan foto produk asli.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="konsep">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">Gambaran menu</p><h2>Setiap orang punya racikan andalan.</h2></div>
+          <p>Bagian ini bisa diisi foto menu dan daftar topping yang benar-benar tersedia setelah pemilik memberikan materi yang tepat.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="emoji" aria-hidden="true">🥢</div><h3>Pilih topping</h3><p>Tampilkan pilihan topping yang telah dikonfirmasi agar pelanggan tahu apa yang tersedia.</p></article>
+          <article class="card"><div class="emoji" aria-hidden="true">🌶️</div><h3>Sesuaikan selera</h3><p>Jelaskan pilihan level pedas hanya jika pilihan tersebut memang tersedia di kedai.</p></article>
+          <article class="card"><div class="emoji" aria-hidden="true">🍲</div><h3>Nikmati semangkuk</h3><p>Gunakan foto asli produk untuk memperlihatkan sajian dengan lebih meyakinkan.</p></article>
+        </div>
+        <div class="note"><strong>Catatan untuk pemilik:</strong> kartu di atas adalah placeholder konten, bukan klaim menu atau fitur yang sudah diverifikasi.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">Kenapa satu halaman?</p><h2>Informasi penting, lebih mudah ditemukan.</h2></div>
+          <p>Landing page sederhana dapat menjadi titik kumpul informasi tanpa menggantikan kanal sosial atau aplikasi pemesanan yang sudah digunakan.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-box"><h3>📍 Lokasi & jam buka</h3><p>Tambahkan alamat dan jam operasional terbaru setelah diverifikasi pemilik.</p></div>
+          <div class="feature-box"><h3>💬 Cara pemesanan</h3><p>Tambahkan tombol ke nomor WhatsApp bisnis atau platform pemesanan resmi setelah dikonfirmasi.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="location">
+          <div><p class="eyebrow">Lokasi usaha</p><h2 style="margin-bottom:0">Temukan titik di Maps</h2><p>Tautan ini mengarah ke pin Google Maps yang diberikan untuk referensi demo. Pastikan pin dan detail bisnis sesuai sebelum publikasi.</p></div>
+          <a class="btn primary" href="https://maps.app.goo.gl/2zNyN1bogShCjQvL9" target="_blank" rel="noopener noreferrer">Buka Google Maps ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap">
+    <div class="footrow"><span>Konsep demo dibuat untuk presentasi jasa landing page.</span><span>Belum merupakan situs resmi atau endorsement Seblak Gacor.</span></div>
+  </footer>
+</body>
+</html>
